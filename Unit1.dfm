@@ -5,6 +5,8 @@ object Form1: TForm1
   Height = 450
   Caption = 'Form1'
   Color = clBtnFace
+  UseDockManager = True
+  DockSite = True
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
@@ -15,7 +17,7 @@ object Form1: TForm1
   OnKeyUp = FormKeyUp
   PixelsPerInch = 96
   TextHeight = 13
-  object tlo: TShape
+  object background: TShape
     Left = 0
     Top = 0
     Width = 854
@@ -134,7 +136,7 @@ object Form1: TForm1
   end
   object paddle1: TImage
     Left = 48
-    Top = 104
+    Top = 144
     Width = 20
     Height = 100
     AutoSize = True
@@ -553,12 +555,14 @@ object Form1: TForm1
   object Paddle1Up: TTimer
     Enabled = False
     Interval = 20
+    OnTimer = Paddle1UpTimer
     Left = 24
     Top = 24
   end
   object Paddle1Down: TTimer
     Enabled = False
     Interval = 20
+    OnTimer = Paddle1DownTimer
     Left = 64
     Top = 24
   end

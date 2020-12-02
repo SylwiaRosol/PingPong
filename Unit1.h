@@ -13,7 +13,7 @@
 class TForm1 : public TForm
 {
 __published:	// IDE-managed Components
-        TShape *tlo;
+        TShape *background;
         TImage *ball;
         TTimer *TimerBall;
         TImage *paddle1;
@@ -29,6 +29,8 @@ __published:	// IDE-managed Components
           TShiftState Shift);
         void __fastcall FormKeyUp(TObject *Sender, WORD &Key,
           TShiftState Shift);
+        void __fastcall Paddle1UpTimer(TObject *Sender);
+        void __fastcall Paddle1DownTimer(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
         __fastcall TForm1(TComponent* Owner);
