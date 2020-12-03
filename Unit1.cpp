@@ -21,10 +21,14 @@ __fastcall TForm1::TForm1(TComponent* Owner)
 AnsiString welcome= "Witaj w grze PingPong.";
 AnsiString instruction = "Lewy gracz steruje wciskaj¹c klawicze A oraz Z.";
 AnsiString instruction2 = "Prawy gracz steruje wciskaj¹c strza³ki do góry i w dó³.";
+AnsiString news = "By gra by³a ciekawsza: ";
+AnsiString news2 = "Im d³u¿ej odbijasz pi³eczkê, tym szybciej siê ona porusza";
+AnsiString news3 ="Je¿eli odbijesz pi³eczkê srodkiem paletki, wtedy pi³eczka przyspieszy";
 AnsiString haveFun = "Mi³ej zabawy!";
 
-ShowMessage(welcome + sLineBreak + sLineBreak + instruction + sLineBreak + instruction2
-+ sLineBreak + sLineBreak + haveFun);
+ShowMessage(welcome + sLineBreak + sLineBreak + instruction + sLineBreak +
+instruction2 + sLineBreak + sLineBreak+ news + sLineBreak + news2 + sLineBreak + news3 +
+sLineBreak + sLineBreak + haveFun);
 }
 
 //---------------------------------------------------------------------------

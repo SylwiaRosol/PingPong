@@ -574,8 +574,8 @@ object Form1: TForm1
     Visible = False
   end
   object points: TLabel
-    Left = 360
-    Top = 120
+    Left = 384
+    Top = 112
     Width = 90
     Height = 37
     Caption = ' 0 : 0 '
@@ -588,7 +588,7 @@ object Form1: TForm1
     Visible = False
   end
   object hits: TLabel
-    Left = 304
+    Left = 320
     Top = 168
     Width = 179
     Height = 31
@@ -602,7 +602,7 @@ object Form1: TForm1
     Visible = False
   end
   object newGame: TButton
-    Left = 312
+    Left = 344
     Top = 320
     Width = 153
     Height = 57
@@ -617,7 +617,7 @@ object Form1: TForm1
     OnClick = newGameClick
   end
   object nextRound: TButton
-    Left = 288
+    Left = 320
     Top = 232
     Width = 217
     Height = 73
