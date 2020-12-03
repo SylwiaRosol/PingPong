@@ -9,8 +9,8 @@
 #pragma resource "*.dfm"
 TForm1 *Form1;
 
-int x=-8;
-int y=-8;
+int x=-10;
+int y=-10;
 int pointLeft=0, pointRight=0;
 int hit=0;
 
@@ -18,7 +18,15 @@ int hit=0;
 __fastcall TForm1::TForm1(TComponent* Owner)
         : TForm(Owner)
 {
+AnsiString welcome= "Witaj w grze PingPong.";
+AnsiString instruction = "Lewy gracz steruje wciskaj¹c klawicze A oraz Z.";
+AnsiString instruction2 = "Prawy gracz steruje wciskaj¹c strza³ki do góry i w dó³.";
+AnsiString haveFun = "Mi³ej zabawy!";
+
+ShowMessage(welcome + sLineBreak + sLineBreak + instruction + sLineBreak + instruction2
++ sLineBreak + sLineBreak + haveFun);
 }
+
 //---------------------------------------------------------------------------
 
 void __fastcall TForm1::TimerBallTimer(TObject *Sender)
@@ -41,13 +49,23 @@ void __fastcall TForm1::TimerBallTimer(TObject *Sender)
          nextRound->Visible = true;
          newGame->Visible = true;
 
+        } else if ( ball->Top + ball->Height/2 == paddle1->Top + paddle1->Height/2
+                && ball->Left <= paddle1->Left + paddle1->Width) {
+                if(x < 0) {
+                        x = -x;
+                        x += 4;
+                        }
         } else if (ball->Top > paddle1->Top - ball->Height/2 &&
                     ball->Top < paddle1->Top + paddle1->Height &&
                     ball->Left <= paddle1->Left + paddle1->Width )
-                {
-                     x = -x;
-                     hit +=1;
-                }
+        {
+                if(x<0) {
+                        x = -x;
+                        hit +=1;
+                        x += 1;
+                        }
+        }
+
 
         if(ball->Left >= paddle2->Left + paddle2->Width) {
          TimerBall->Enabled = false;
@@ -61,16 +79,22 @@ void __fastcall TForm1::TimerBallTimer(TObject *Sender)
          nextRound->Visible = true;
          newGame->Visible = true;
 
-        }  else if (ball->Top > paddle2->Top - ball->Height/2 &&
+        } else if ( ball->Top + ball->Height/2 == paddle2->Top + paddle2->Height/2
+                && ball->Left + ball->Width >= paddle2->Left){
+                if( x > 0) {
+                        x = -x;
+                        x -= 4;
+                }
+         } else if (ball->Top > paddle2->Top - ball->Height/2 &&
                     ball->Top < paddle2->Top + paddle2->Height &&
                     ball->Left + ball->Width >= paddle2->Left)
-                {
-                     x = -x;
-                     hit +=1;
+        {
+        if(x > 0) {
+                x = -x;
+                x -= 1;
+                hit +=1;
                 }
-
-
-
+        }
 }
 //---------------------------------------------------------------------------
 
@@ -133,7 +157,7 @@ void __fastcall TForm1::newGameClick(TObject *Sender)
         ball->Left = 400;
         ball->Top = 200;
         ball->Visible = true;
-        x=-8; y=-8;
+        x=4; y=4;
         TimerBall->Enabled = true;
 
 }
@@ -154,7 +178,7 @@ void __fastcall TForm1::nextRoundClick(TObject *Sender)
         ball->Left = 400;
         ball->Top = 200;
         ball->Visible = true;
-        x=-8; y=-8;
+        x=4; y=-4; hit=0;
         TimerBall->Enabled = true;
 
 }

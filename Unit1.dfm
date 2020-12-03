@@ -1,8 +1,8 @@
 object Form1: TForm1
-  Left = 229
-  Top = 208
-  Width = 870
-  Height = 450
+  Left = 226
+  Top = 39
+  Width = 902
+  Height = 505
   Caption = 'Form1'
   Color = clBtnFace
   UseDockManager = True
@@ -20,8 +20,8 @@ object Form1: TForm1
   object background: TShape
     Left = 0
     Top = 0
-    Width = 854
-    Height = 411
+    Width = 886
+    Height = 466
     Align = alClient
     Brush.Color = clMedGray
     Visible = False
@@ -590,7 +590,7 @@ object Form1: TForm1
   object hits: TLabel
     Left = 304
     Top = 168
-    Width = 185
+    Width = 179
     Height = 31
     Caption = ' Ilosc odbic: 0'
     Font.Charset = EASTEUROPE_CHARSET
