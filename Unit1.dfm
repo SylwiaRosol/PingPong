@@ -24,11 +24,38 @@ object Form1: TForm1
     Height = 411
     Align = alClient
     Brush.Color = clMedGray
-    Enabled = False
+    Visible = False
+  end
+  object PointForTheRight: TLabel
+    Left = 192
+    Top = 64
+    Width = 430
+    Height = 31
+    Caption = ' Punkt dla gracza prawego  -> '
+    Font.Charset = EASTEUROPE_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -31
+    Font.Name = 'MS UI Gothic'
+    Font.Style = [fsBold]
+    ParentFont = False
+    Visible = False
+  end
+  object title: TLabel
+    Left = 240
+    Top = 64
+    Width = 342
+    Height = 41
+    Caption = 'Zagrajmy w PingPonga!'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -31
+    Font.Name = 'MV Boli'
+    Font.Style = []
+    ParentFont = False
   end
   object ball: TImage
-    Left = 488
-    Top = 216
+    Left = 392
+    Top = 200
     Width = 32
     Height = 32
     AutoSize = True
@@ -532,7 +559,81 @@ object Form1: TForm1
       17291E17291E17291E17291E17291EFFFFFF}
     Transparent = True
   end
+  object PointForTheLeft: TLabel
+    Left = 200
+    Top = 64
+    Width = 411
+    Height = 31
+    Caption = ' <- Punkt dla gracza lewego  '
+    Font.Charset = EASTEUROPE_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -31
+    Font.Name = 'MS UI Gothic'
+    Font.Style = [fsBold]
+    ParentFont = False
+    Visible = False
+  end
+  object points: TLabel
+    Left = 360
+    Top = 120
+    Width = 90
+    Height = 37
+    Caption = ' 0 : 0 '
+    Font.Charset = EASTEUROPE_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -37
+    Font.Name = 'MS UI Gothic'
+    Font.Style = []
+    ParentFont = False
+    Visible = False
+  end
+  object hits: TLabel
+    Left = 304
+    Top = 168
+    Width = 185
+    Height = 31
+    Caption = ' Ilosc odbic: 0'
+    Font.Charset = EASTEUROPE_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -31
+    Font.Name = 'MS UI Gothic'
+    Font.Style = []
+    ParentFont = False
+    Visible = False
+  end
+  object newGame: TButton
+    Left = 312
+    Top = 320
+    Width = 153
+    Height = 57
+    Caption = 'Nowa gra'
+    Font.Charset = EASTEUROPE_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -31
+    Font.Name = 'MS UI Gothic'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 0
+    OnClick = newGameClick
+  end
+  object nextRound: TButton
+    Left = 288
+    Top = 232
+    Width = 217
+    Height = 73
+    Caption = 'Nast'#281'pna ruda'
+    Font.Charset = EASTEUROPE_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -29
+    Font.Name = 'MS UI Gothic'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 1
+    Visible = False
+    OnClick = nextRoundClick
+  end
   object TimerBall: TTimer
+    Enabled = False
     Interval = 15
     OnTimer = TimerBallTimer
     Left = 296
